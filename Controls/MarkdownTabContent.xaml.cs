@@ -1,8 +1,10 @@
 using System;
 using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using MarkdownViewer.Core;
 using MarkdownViewer.ViewModels;
 using Microsoft.Web.WebView2.Core;
@@ -17,11 +19,18 @@ namespace MarkdownViewer.Controls
     /// </summary>
     public partial class MarkdownTabContent : UserControl, IDisposable
     {
+        // Reads the document's current scroll metrics straight from the live
+        // page and returns them as a JSON array [scrollTop, scrollHeight, clientHeight].
+        private const string ScrollPollScript =
+            "(function(){var el=document.scrollingElement||document.documentElement;" +
+            "return [el.scrollTop, el.scrollHeight, el.clientHeight];})()";
+
         private readonly MarkdownEngine _markdownEngine;
         private readonly Renderer _renderer;
         private readonly FileWatcher _fileWatcher;
         private readonly TabItemViewModel _viewModel;
         private readonly SettingsManager _settingsManager;
+        private readonly DispatcherTimer _pollTimer;
 
         private bool _webViewReady = false;
         private bool _isDisposed;
@@ -45,13 +54,32 @@ namespace MarkdownViewer.Controls
 
             _fileWatcher.FileChanged += OnFileChanged;
 
+            // Poll the live document for the reading-progress indicator. The
+            // TabControl unloads non-selected content, which detaches the
+            // WebView2 host and makes push-based (postMessage) reporting
+            // unreliable for tabs that load while switching. Executing a tiny
+            // read on the page works whenever the control is attached, and the
+            // IsLoaded guard below naturally pauses polling while a tab is not
+            // on screen.
+            _pollTimer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromMilliseconds(200)
+            };
+            _pollTimer.Tick += (s, e) => PollScrollProgress();
+
             Loaded += OnLoaded;
             Unloaded += OnUnloaded;
         }
 
         private async void OnLoaded(object sender, RoutedEventArgs e)
         {
-            if (_webViewReady) return;
+            if (_webViewReady)
+            {
+                // Tab content re-attached to the visual tree (tab switched
+                // back). The poll timer keeps ticking; the IsLoaded guard in
+                // PollScrollProgress resumes reading the page automatically.
+                return;
+            }
 
             try
             {
@@ -67,6 +95,9 @@ namespace MarkdownViewer.Controls
                 {
                     EmptyState.Visibility = Visibility.Visible;
                 }
+
+                // Begin reporting scroll position once the page can answer.
+                _pollTimer.Start();
             }
             catch (Exception ex)
             {
@@ -193,6 +224,7 @@ namespace MarkdownViewer.Controls
             if (_isDisposed) return;
             _isDisposed = true;
 
+            _pollTimer.Stop();
             _fileWatcher.FileChanged -= OnFileChanged;
             _fileWatcher.Dispose();
             _viewModel.Dispose();
@@ -201,5 +233,48 @@ namespace MarkdownViewer.Controls
             // but we ensure we don't access it after dispose
             _webViewReady = false;
         }
+
+        #region Reading progress indicator
+
+        private async void PollScrollProgress()
+        {
+            // Only read while this tab is actually on screen; a detached
+            // WebView2 (unloaded tab) throws on ExecuteScriptAsync, so skip it.
+            if (_isDisposed || !IsLoaded || WebView.CoreWebView2 == null) return;
+
+            try
+            {
+                string json = await WebView.CoreWebView2.ExecuteScriptAsync(ScrollPollScript);
+                using var doc = JsonDocument.Parse(json);
+                var arr = doc.RootElement;
+
+                if (arr.ValueKind == JsonValueKind.Array && arr.GetArrayLength() >= 3)
+                {
+                    UpdateProgress(arr[0].GetDouble(), arr[1].GetDouble(), arr[2].GetDouble());
+                }
+            }
+            catch
+            {
+                // Page not live yet — try again on the next tick.
+            }
+        }
+
+        private void UpdateProgress(double scrollTop, double scrollHeight, double clientHeight)
+        {
+            // Not scrollable — nothing to show.
+            if (scrollHeight <= clientHeight + 1)
+            {
+                ReadingProgress.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+            ReadingProgress.Visibility = Visibility.Visible;
+
+            double maxScroll = Math.Max(1, scrollHeight - clientHeight);
+            double pct = Math.Max(0, Math.Min(1, scrollTop / maxScroll));
+            ReadingProgress.Value = pct * 100;
+        }
+
+        #endregion
     }
 }

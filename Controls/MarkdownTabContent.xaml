@@ -3,20 +3,73 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf">
 
-    <Grid>
-        <!-- WebView2 for this tab -->
-        <wv2:WebView2 x:Name="WebView"
-                      DefaultBackgroundColor="Transparent" />
+    <UserControl.Resources>
+        <!-- Slim vertical reading-progress bar. Lives in its own WPF-only gutter
+             column beside the WebView2: WPF elements cannot render ON TOP of the
+             WebView2 HWND (airspace), so the indicator must not overlap it.
+             ProgressBar is used deliberately — its automation peer exposes the
+             value via RangeValuePattern for automated verification. -->
+        <Style x:Key="ReadingProgressBarStyle" TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Grid>
+                            <Border x:Name="PART_Track"
+                                    Background="{DynamicResource Brush.Border}"
+                                    Opacity="0.35"
+                                    CornerRadius="2" />
+                            <Border x:Name="PART_Indicator"
+                                    Background="{DynamicResource Brush.Accent}"
+                                    CornerRadius="2"
+                                    VerticalAlignment="Bottom" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
-        <!-- Empty state shown before a file is loaded -->
-        <Grid x:Name="EmptyState" Background="{DynamicResource Brush.Background}">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.5">
-                <TextBlock Text="📝" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12" />
-                <TextBlock Text="No file loaded in this tab"
-                           FontSize="14"
-                           HorizontalAlignment="Center"
-                           Foreground="{DynamicResource Brush.TextPrimary}" />
-            </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="14" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <!-- WebView2 for this tab -->
+            <wv2:WebView2 x:Name="WebView"
+                          DefaultBackgroundColor="Transparent" />
+
+            <!-- Empty state shown before a file is loaded -->
+            <Grid x:Name="EmptyState" Background="{DynamicResource Brush.Background}">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.5">
+                    <TextBlock Text="📝" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                    <TextBlock Text="No file loaded in this tab"
+                               FontSize="14"
+                               HorizontalAlignment="Center"
+                               Foreground="{DynamicResource Brush.TextPrimary}" />
+                </StackPanel>
+            </Grid>
         </Grid>
+
+        <!-- Reading progress indicator: slim vertical bar on the right edge of
+             the content area, in the gutter column. Reflects the scroll % of
+             THIS tab's document, updates live while scrolling, and is per-tab
+             (each tab owns its own bar, so switching tabs naturally shows each
+             file's own progress). Hidden while the document cannot scroll. -->
+        <ProgressBar x:Name="ReadingProgress"
+                     Grid.Column="1"
+                     Style="{StaticResource ReadingProgressBarStyle}"
+                     Orientation="Vertical"
+                     Width="4"
+                     HorizontalAlignment="Center"
+                     Margin="0,8,0,8"
+                     Minimum="0"
+                     Maximum="100"
+                     Value="0"
+                     IsHitTestVisible="False"
+                     Visibility="Collapsed"
+                     AutomationProperties.Name="Reading progress"
+                     AutomationProperties.AutomationId="ReadingProgressIndicator" />
     </Grid>
 </UserControl>
