@@ -1,0 +1,16 @@
+<Application x:Class="MarkdownViewer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- App-wide UI (chrome) font. Updated at runtime when the user
+                 changes "App Font" in Settings — all windows pick it up via
+                 DynamicResource. Does NOT affect Body/Code fonts (those are
+                 scoped to the WebView2-rendered markdown content). -->
+            <FontFamily x:Key="AppFontFamily">Segoe UI</FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

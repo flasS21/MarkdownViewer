@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Controls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- ============================================================
+         DARK THEME — Catppuccin Mocha
+         Single accent hue: Catppuccin Blue (#89b4fa), used for
+         buttons, focus states, active tab, selection, sliders.
+         All controls reference these brushes via DynamicResource;
+         no hardcoded colors exist in any view or template.
+         ============================================================ -->
+
+    <!-- Surfaces -->
+    <SolidColorBrush x:Key="Brush.Background"   Color="#1e1e2e" /> <!-- base     -->
+    <SolidColorBrush x:Key="Brush.Surface"      Color="#181825" /> <!-- mantle   -->
+    <SolidColorBrush x:Key="Brush.SurfaceAlt"   Color="#313244" /> <!-- surface0 -->
+    <SolidColorBrush x:Key="Brush.SurfaceHover" Color="#45475a" /> <!-- surface1 -->
+    <SolidColorBrush x:Key="Brush.SurfacePressed" Color="#585b70" /> <!-- surface2 -->
+    <SolidColorBrush x:Key="Brush.Border"       Color="#313244" /> <!-- surface0 -->
+    <SolidColorBrush x:Key="Brush.InputBackground" Color="#11111b" /> <!-- crust -->
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="Brush.TextPrimary"   Color="#cdd6f4" /> <!-- text     -->
+    <SolidColorBrush x:Key="Brush.TextSecondary" Color="#a6adc8" /> <!-- subtext0 -->
+    <SolidColorBrush x:Key="Brush.TextFaint"     Color="#6c7086" /> <!-- overlay0 -->
+
+    <!-- Accent (Catppuccin Blue) -->
+    <SolidColorBrush x:Key="Brush.Accent"      Color="#89b4fa" />
+    <SolidColorBrush x:Key="Brush.AccentHover" Color="#a5c4fc" />
+    <SolidColorBrush x:Key="Brush.TextOnAccent" Color="#1e1e2e" />
+
+    <!-- Semantic -->
+    <SolidColorBrush x:Key="Brush.Warning"     Color="#f9e2af" /> <!-- yellow -->
+    <SolidColorBrush x:Key="Brush.Danger"      Color="#f38ba8" /> <!-- red    -->
+    <SolidColorBrush x:Key="Brush.DangerHover" Color="#e26d91" />
+    <SolidColorBrush x:Key="Brush.TextOnDanger" Color="#1e1e2e" />
+
+    <!-- Shared effects -->
+    <DropShadowEffect x:Key="DropShadowEffect"
+                      BlurRadius="12"
+                      ShadowDepth="2"
+                      Opacity="0.45"
+                      Color="#000000" />
+
+</ResourceDictionary>

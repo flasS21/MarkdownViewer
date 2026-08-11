@@ -1,0 +1,22 @@
+<UserControl x:Class="MarkdownViewer.Controls.MarkdownTabContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf">
+
+    <Grid>
+        <!-- WebView2 for this tab -->
+        <wv2:WebView2 x:Name="WebView"
+                      DefaultBackgroundColor="Transparent" />
+
+        <!-- Empty state shown before a file is loaded -->
+        <Grid x:Name="EmptyState" Background="{DynamicResource Brush.Background}">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Opacity="0.5">
+                <TextBlock Text="📝" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,12" />
+                <TextBlock Text="No file loaded in this tab"
+                           FontSize="14"
+                           HorizontalAlignment="Center"
+                           Foreground="{DynamicResource Brush.TextPrimary}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
