@@ -21,3 +21,6 @@ Desktop.ini
 ## Runtime
 *.pdb
 *.cache
+
+## Internal notes / LLM context (never commit)
+context.md
