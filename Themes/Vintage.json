@@ -1,0 +1,36 @@
+{
+  "name": "Vintage",
+  "author": "Windows Terminal (retro)",
+  "isDark": true,
+  "chrome": {
+    "background": "#000000",
+    "surface": "#0c120c",
+    "surfaceAlt": "#152415",
+    "surfaceHover": "#1e361e",
+    "surfacePressed": "#284828",
+    "border": "#1c2e1c",
+    "inputBackground": "#050805",
+    "textPrimary": "#66ff66",
+    "textSecondary": "#33bb33",
+    "textFaint": "#1f7a1f",
+    "accent": "#00dd00",
+    "accentHover": "#33ff33",
+    "textOnAccent": "#000000",
+    "warning": "#aaff55",
+    "danger": "#ff5555",
+    "dangerHover": "#ff8888",
+    "textOnDanger": "#000000"
+  },
+  "syntax": {
+    "foreground": "#66ff66",
+    "comment": "#2a7a2a",
+    "punctuation": "#66ff66",
+    "number": "#ccff66",
+    "string": "#aaff55",
+    "operator": "#33dd33",
+    "keyword": "#88ff88",
+    "function": "#00cc66",
+    "variable": "#33ff99",
+    "type": "#66ffcc"
+  }
+}

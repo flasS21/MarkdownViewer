@@ -50,8 +50,12 @@ namespace MarkdownViewer.Core
 
         public string Render(string markdownHtml, AppSettings settings, string? baseDirectory = null)
         {
-            bool isDark = settings.IsDarkMode;
-            string themeName = isDark ? "dark" : "light";
+            return Render(markdownHtml, settings, ThemeService.Instance.CurrentTheme, baseDirectory);
+        }
+
+        public string Render(string markdownHtml, AppSettings settings, ThemeDefinition theme, string? baseDirectory = null)
+        {
+            string themeName = theme?.Name ?? "Catppuccin Mocha";
 
             // Check if we can do a CSS-only update
             bool fullRebuild = _cachedHtmlTemplate == null
@@ -63,7 +67,7 @@ namespace MarkdownViewer.Core
 
             if (fullRebuild)
             {
-                _cachedHtmlTemplate = BuildFullHtml(markdownHtml, settings, baseDirectory);
+                _cachedHtmlTemplate = BuildFullHtml(markdownHtml, settings, theme, baseDirectory);
                 _lastTheme = themeName;
                 _lastBodyFont = settings.BodyFontFamily;
                 _lastBodySize = settings.BodyFontSize;
@@ -94,15 +98,14 @@ namespace MarkdownViewer.Core
             ";
         }
 
-        private string BuildFullHtml(string markdownHtml, AppSettings settings, string? baseDirectory)
+        private string BuildFullHtml(string markdownHtml, AppSettings settings, ThemeDefinition theme, string? baseDirectory)
         {
-            bool isDark = settings.IsDarkMode;
+            theme ??= ThemeService.Instance.CurrentTheme;
+            bool isDark = theme.IsDark;
             string themeClass = isDark ? "dark" : "light";
 
-            // Catppuccin Mocha (dark) / Catppuccin Latte (light) — same accent hue family
-            string themeVars = isDark
-                ? "--bg: #1e1e2e; --bg-alt: #181825; --bg-hover: #313244; --text: #cdd6f4; --text-muted: #a6adc8; --text-faint: #6c7086; --border: #313244; --accent: #89b4fa; --accent-hover: #a5c4fc; --link: #89b4fa; --code-bg: #11111b; --code-text: #89b4fa; --blockquote-border: #585b70; --hr: #313244; --table-stripe: #181825; --selection-bg: #89b4fa; --selection-text: #1e1e2e; --on-accent: #1e1e2e;"
-                : "--bg: #eff1f5; --bg-alt: #e6e9ef; --bg-hover: #ccd0da; --text: #4c4f69; --text-muted: #5c5f77; --text-faint: #8c8fa1; --border: #ccd0da; --accent: #1e66f5; --accent-hover: #175ad8; --link: #1e66f5; --code-bg: #e6e9ef; --code-text: #175ad8; --blockquote-border: #acb0be; --hr: #ccd0da; --table-stripe: #e6e9ef; --selection-bg: #1e66f5; --selection-text: #ffffff; --on-accent: #ffffff;";
+            string themeVars = BuildThemeVars(theme);
+            string tokenVars = BuildTokenVars(theme);
 
             string prismCss = _prismCss ?? "";
             string prismJs = _prismJs ?? "";
@@ -121,6 +124,7 @@ namespace MarkdownViewer.Core
 <style>
 :root {{
     {themeVars}
+    {tokenVars}
     --body-font: '{EscapeCss(settings.BodyFontFamily)}', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     --body-size: {settings.BodyFontSize}px;
     --code-font: '{EscapeCss(settings.CodeFontFamily)}', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
@@ -341,10 +345,6 @@ dd {{ margin-left: 1.5em; color: var(--text-muted); }}
 
 /* Prism.js overrides */
 {prismCss}
-
-/* Prism theme adjustments for our variables */
-.dark pre[class*=""language-""], .dark code[class*=""language-""] {{ color: #cdd6f4; text-shadow: none; }}
-.light pre[class*=""language-""], .light code[class*=""language-""] {{ color: #4c4f69; text-shadow: none; }}
 </style>
 </head>
 <body>
@@ -382,6 +382,26 @@ if (window.Prism) {{ Prism.highlightAll(); }}
 </script>
 </body>
 </html>";
+        }
+
+        private static string BuildThemeVars(ThemeDefinition theme)
+        {
+            var c = theme.Chrome;
+            return $"--bg: {c.Background}; --bg-alt: {c.Surface}; --bg-hover: {c.SurfaceAlt}; " +
+                   $"--text: {c.TextPrimary}; --text-muted: {c.TextSecondary}; --text-faint: {c.TextFaint}; " +
+                   $"--border: {c.Border}; --accent: {c.Accent}; --accent-hover: {c.AccentHover}; " +
+                   $"--link: {c.Accent}; --code-bg: {c.InputBackground}; --code-text: {c.Accent}; " +
+                   $"--blockquote-border: {c.Border}; --hr: {c.Border}; --table-stripe: {c.Surface}; " +
+                   $"--selection-bg: {c.Accent}; --selection-text: {c.TextOnAccent}; --on-accent: {c.TextOnAccent};";
+        }
+
+        private static string BuildTokenVars(ThemeDefinition theme)
+        {
+            var s = theme.Syntax;
+            return $"--token-text: {s.Foreground}; --token-comment: {s.Comment}; --token-punctuation: {s.Punctuation}; " +
+                   $"--token-number: {s.Number}; --token-string: {s.String}; --token-operator: {s.Operator}; " +
+                   $"--token-keyword: {s.Keyword}; --token-function: {s.Function}; " +
+                   $"--token-variable: {s.Variable}; --token-type: {s.Type};";
         }
 
         private string ReplaceBodyContent(string html, string newBody)

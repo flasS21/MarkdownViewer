@@ -77,25 +77,23 @@
                           Data="M4 21v-7 M4 10V3 M12 21v-9 M12 8V3 M20 21v-5 M20 12V3 M3 14h6 M11 8h6 M19 16h6" />
                 </Button>
 
-                <!-- Theme Toggle (sun/moon icon) -->
-                <Button Grid.Column="3"
-                        x:Name="ThemeToggleButton"
-                        Style="{DynamicResource TitleBarButtonStyle}"
-                        Click="ThemeToggleButton_Click"
-                        ToolTip="Toggle theme (Ctrl+T)"
-                        AutomationProperties.Name="Toggle theme"
-                        Margin="2,0,2,0"
-                        WindowChrome.IsHitTestVisibleInChrome="True">
-                    <Grid Width="16" Height="16">
-                        <Path x:Name="MoonPath"
-                              Style="{StaticResource TitleBarIcon}"
-                              Data="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                        <Path x:Name="SunPath"
-                              Style="{StaticResource TitleBarIcon}"
-                              Data="M12 3v2 M12 19v2 M5 5l1.4 1.4 M19 19l1.4 1.4 M3 12h2 M19 12h2 M5 19l1.4-1.4 M19 5l1.4-1.4"
-                              Visibility="Collapsed" />
-                    </Grid>
-                </Button>
+                <!-- Theme picker (dropdown in the header) -->
+                <ComboBox Grid.Column="3"
+                          x:Name="ThemeDropdown"
+                          Width="160"
+                          Margin="2,0,2,0"
+                          VerticalAlignment="Center"
+                          MaxDropDownHeight="300"
+                          WindowChrome.IsHitTestVisibleInChrome="True"
+                          SelectionChanged="ThemeDropdown_SelectionChanged"
+                          AutomationProperties.Name="Theme"
+                          AutomationProperties.AutomationId="ThemeDropdown">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
                 <!-- Open Button (folder icon + label) -->
                 <Button Grid.Column="4"

@@ -131,8 +131,16 @@ Replace all four with plain text labels:
 
 ---
 
-## Issue 5 — NEW: Reader Mode (warm tone + variants)
-User request (Discussion #8). A reading-mode toggle for the document view:
+## Issue 5 — NEW: Reader Mode (warm tone + variants) — SUPERSEDED by the theme system
+
+> **RESOLVED (2025-08-11):** the warm-tone idea was rejected after a prototype. In its
+> place, the app now has a JSON-driven multi-editor/multi-terminal theme system
+> (VSCode, Sublime, IntelliJ, Notepad++/Zenburn, Gruvbox, Dracula, Nord + Windows
+> Terminal schemes: Campbell, Solarized, One Half, Tango, Vintage, CGA, IBM 5153,
+> Dark++) with a header dropdown. Real palettes replace the filter idea, so this
+> issue is closed. Original text kept below for reference.
+
+Original request (Discussion #8). A reading-mode toggle for the document view:
 
 - Toggle that applies a **warm/sepia tone** to the rendered markdown content.
 - **Bit-adjustable warmth** — a small, coarse adjustment control (a few steps, not a

@@ -1,0 +1,36 @@
+{
+  "name": "Catppuccin Mocha",
+  "author": "Catppuccin",
+  "isDark": true,
+  "chrome": {
+    "background": "#1e1e2e",
+    "surface": "#181825",
+    "surfaceAlt": "#313244",
+    "surfaceHover": "#45475a",
+    "surfacePressed": "#585b70",
+    "border": "#313244",
+    "inputBackground": "#11111b",
+    "textPrimary": "#cdd6f4",
+    "textSecondary": "#a6adc8",
+    "textFaint": "#6c7086",
+    "accent": "#89b4fa",
+    "accentHover": "#a5c4fc",
+    "textOnAccent": "#1e1e2e",
+    "warning": "#f9e2af",
+    "danger": "#f38ba8",
+    "dangerHover": "#e26d91",
+    "textOnDanger": "#1e1e2e"
+  },
+  "syntax": {
+    "foreground": "#cdd6f4",
+    "comment": "#6c7086",
+    "punctuation": "#bac2de",
+    "number": "#fab387",
+    "string": "#a6e3a1",
+    "operator": "#89dceb",
+    "keyword": "#cba6f7",
+    "function": "#89b4fa",
+    "variable": "#f9e2af",
+    "type": "#f9e2af"
+  }
+}

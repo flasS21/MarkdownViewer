@@ -1,0 +1,36 @@
+{
+  "name": "Dracula",
+  "author": "Zeno Rocha",
+  "isDark": true,
+  "chrome": {
+    "background": "#282a36",
+    "surface": "#21222c",
+    "surfaceAlt": "#343746",
+    "surfaceHover": "#44475a",
+    "surfacePressed": "#565f89",
+    "border": "#44475a",
+    "inputBackground": "#191a21",
+    "textPrimary": "#f8f8f2",
+    "textSecondary": "#bd93f9",
+    "textFaint": "#6272a4",
+    "accent": "#bd93f9",
+    "accentHover": "#caa9fa",
+    "textOnAccent": "#282a36",
+    "warning": "#f1fa8c",
+    "danger": "#ff5555",
+    "dangerHover": "#ff7777",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#f8f8f2",
+    "comment": "#6272a4",
+    "punctuation": "#f8f8f2",
+    "number": "#bd93f9",
+    "string": "#f1fa8c",
+    "operator": "#ff79c6",
+    "keyword": "#ff79c6",
+    "function": "#50fa7b",
+    "variable": "#f8f8f2",
+    "type": "#8be9fd"
+  }
+}

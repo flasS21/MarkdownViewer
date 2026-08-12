@@ -23,9 +23,7 @@ namespace MarkdownViewer.Views
                 BodyFontFamily = currentSettings.BodyFontFamily,
                 BodyFontSize = currentSettings.BodyFontSize,
                 CodeFontFamily = currentSettings.CodeFontFamily,
-                CodeFontSize = currentSettings.CodeFontSize,
-                IsDarkMode = currentSettings.IsDarkMode,
-                FollowSystemTheme = currentSettings.FollowSystemTheme
+                CodeFontSize = currentSettings.CodeFontSize
             };
             _workingSettings = currentSettings;
 
@@ -36,14 +34,6 @@ namespace MarkdownViewer.Views
         {
             try
             {
-                // Theme radio buttons
-                if (_workingSettings.FollowSystemTheme)
-                    FollowSystemRadio.IsChecked = true;
-                else if (_workingSettings.IsDarkMode)
-                    DarkRadio.IsChecked = true;
-                else
-                    LightRadio.IsChecked = true;
-
                 // Populate font lists (with error handling)
                 try
                 {
@@ -89,25 +79,6 @@ namespace MarkdownViewer.Views
                 MessageBox.Show(
                     $"Settings failed to load:\n{ex.Message}\n\nUsing defaults.",
                     "Settings Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-
-        private void ThemeRadio_Checked(object sender, RoutedEventArgs e)
-        {
-            if (FollowSystemRadio.IsChecked == true)
-            {
-                _workingSettings.FollowSystemTheme = true;
-                _workingSettings.IsDarkMode = SettingsManager.IsSystemDarkMode();
-            }
-            else if (DarkRadio.IsChecked == true)
-            {
-                _workingSettings.FollowSystemTheme = false;
-                _workingSettings.IsDarkMode = true;
-            }
-            else if (LightRadio.IsChecked == true)
-            {
-                _workingSettings.FollowSystemTheme = false;
-                _workingSettings.IsDarkMode = false;
             }
         }
 

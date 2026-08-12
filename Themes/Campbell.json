@@ -1,0 +1,36 @@
+{
+  "name": "Campbell",
+  "author": "Windows Terminal (default)",
+  "isDark": true,
+  "chrome": {
+    "background": "#0c0c0c",
+    "surface": "#161616",
+    "surfaceAlt": "#242424",
+    "surfaceHover": "#333333",
+    "surfacePressed": "#444444",
+    "border": "#333333",
+    "inputBackground": "#1a1a1a",
+    "textPrimary": "#cccccc",
+    "textSecondary": "#999999",
+    "textFaint": "#767676",
+    "accent": "#3a96dd",
+    "accentHover": "#5fb0e8",
+    "textOnAccent": "#0c0c0c",
+    "warning": "#f9f1a5",
+    "danger": "#e74856",
+    "dangerHover": "#ff6f7a",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#cccccc",
+    "comment": "#767676",
+    "punctuation": "#cccccc",
+    "number": "#f9f1a5",
+    "string": "#16c60c",
+    "operator": "#3a96dd",
+    "keyword": "#61d6d6",
+    "function": "#3b78ff",
+    "variable": "#e74856",
+    "type": "#b4009e"
+  }
+}

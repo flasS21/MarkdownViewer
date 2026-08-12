@@ -1,0 +1,36 @@
+{
+  "name": "IntelliJ Darcula",
+  "author": "JetBrains",
+  "isDark": true,
+  "chrome": {
+    "background": "#2b2b2b",
+    "surface": "#313335",
+    "surfaceAlt": "#3c3f41",
+    "surfaceHover": "#45494a",
+    "surfacePressed": "#4e5253",
+    "border": "#3c3f41",
+    "inputBackground": "#3c3f41",
+    "textPrimary": "#a9b7c6",
+    "textSecondary": "#7a8288",
+    "textFaint": "#60676c",
+    "accent": "#6897bb",
+    "accentHover": "#79abdc",
+    "textOnAccent": "#ffffff",
+    "warning": "#cc7832",
+    "danger": "#c75450",
+    "dangerHover": "#d65f5b",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#a9b7c6",
+    "comment": "#808080",
+    "punctuation": "#a9b7c6",
+    "number": "#6897bb",
+    "string": "#6a8759",
+    "operator": "#a9b7c6",
+    "keyword": "#cc7832",
+    "function": "#ffc66d",
+    "variable": "#a9b7c6",
+    "type": "#ffc66d"
+  }
+}

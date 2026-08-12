@@ -1,0 +1,36 @@
+{
+  "name": "Sublime Mariana",
+  "author": "Sublime Text",
+  "isDark": true,
+  "chrome": {
+    "background": "#34352e",
+    "surface": "#2f302a",
+    "surfaceAlt": "#3f403a",
+    "surfaceHover": "#4a4b43",
+    "surfacePressed": "#56574e",
+    "border": "#3f403a",
+    "inputBackground": "#26271f",
+    "textPrimary": "#d8caac",
+    "textSecondary": "#b8b5a4",
+    "textFaint": "#8a8778",
+    "accent": "#9cc4ff",
+    "accentHover": "#b3d4ff",
+    "textOnAccent": "#24241e",
+    "warning": "#d8caac",
+    "danger": "#e5c07b",
+    "dangerHover": "#f0cf94",
+    "textOnDanger": "#24241e"
+  },
+  "syntax": {
+    "foreground": "#d8caac",
+    "comment": "#88847c",
+    "punctuation": "#d8caac",
+    "number": "#e5c07b",
+    "string": "#c3b18a",
+    "operator": "#d8caac",
+    "keyword": "#f8f8f2",
+    "function": "#d5b87a",
+    "variable": "#b8b5a4",
+    "type": "#9cc4ff"
+  }
+}

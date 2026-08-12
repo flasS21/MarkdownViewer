@@ -19,6 +19,9 @@ namespace MarkdownViewer.Models
         [JsonPropertyName("codeFontSize")]
         public double CodeFontSize { get; set; } = 13.5;
 
+        [JsonPropertyName("colorTheme")]
+        public string ThemeName { get; set; } = "";
+
         [JsonPropertyName("isDarkMode")]
         public bool IsDarkMode { get; set; } = true;
 

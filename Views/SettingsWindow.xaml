@@ -43,19 +43,6 @@
                       HorizontalScrollBarVisibility="Disabled">
             <StackPanel>
 
-                <!-- Theme Section -->
-                <Border Style="{DynamicResource SettingsSectionStyle}" Margin="0,0,0,10">
-                    <StackPanel Margin="16">
-                        <TextBlock Text="Theme" FontWeight="SemiBold" FontSize="14" Margin="0,0,0,10" />
-                        <RadioButton x:Name="FollowSystemRadio" Content="Follow Windows system theme"
-                                     Margin="0,5" Checked="ThemeRadio_Checked" />
-                        <RadioButton x:Name="DarkRadio" Content="Dark mode"
-                                     Margin="0,5" Checked="ThemeRadio_Checked" />
-                        <RadioButton x:Name="LightRadio" Content="Light mode"
-                                     Margin="0,5" Checked="ThemeRadio_Checked" />
-                    </StackPanel>
-                </Border>
-
                 <!-- App Font Section (WPF chrome — title bar, tabs, buttons, labels) -->
                 <Border Style="{DynamicResource SettingsSectionStyle}" Margin="0,0,0,10">
                     <StackPanel Margin="16">

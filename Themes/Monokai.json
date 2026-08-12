@@ -1,0 +1,36 @@
+{
+  "name": "Monokai",
+  "author": "Monokai / Wimer Hazenberg",
+  "isDark": true,
+  "chrome": {
+    "background": "#272822",
+    "surface": "#2d2d28",
+    "surfaceAlt": "#3e3d32",
+    "surfaceHover": "#49483e",
+    "surfacePressed": "#55544a",
+    "border": "#3e3d32",
+    "inputBackground": "#1e1f1a",
+    "textPrimary": "#f8f8f2",
+    "textSecondary": "#cfcfc2",
+    "textFaint": "#75715e",
+    "accent": "#66d9ef",
+    "accentHover": "#8be9fd",
+    "textOnAccent": "#272822",
+    "warning": "#e6db74",
+    "danger": "#f92672",
+    "dangerHover": "#ff5c8a",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#f8f8f2",
+    "comment": "#75715e",
+    "punctuation": "#f8f8f2",
+    "number": "#ae81ff",
+    "string": "#e6db74",
+    "operator": "#f92672",
+    "keyword": "#f92672",
+    "function": "#a6e22e",
+    "variable": "#fd971f",
+    "type": "#a6e22e"
+  }
+}

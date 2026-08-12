@@ -9,7 +9,7 @@
                  scoped to the WebView2-rendered markdown content). -->
             <FontFamily x:Key="AppFontFamily">Segoe UI</FontFamily>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/DarkTheme.xaml" />
+                <ResourceDictionary Source="Themes/ThemeShell.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

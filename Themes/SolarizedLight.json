@@ -1,0 +1,36 @@
+{
+  "name": "Solarized Light",
+  "author": "Ethan Schoonover / Windows Terminal",
+  "isDark": false,
+  "chrome": {
+    "background": "#fdf6e3",
+    "surface": "#eee8d5",
+    "surfaceAlt": "#ddd6c1",
+    "surfaceHover": "#c9c3ae",
+    "surfacePressed": "#b8b29d",
+    "border": "#ddd6c1",
+    "inputBackground": "#e9e2cd",
+    "textPrimary": "#586e75",
+    "textSecondary": "#657b83",
+    "textFaint": "#93a1a1",
+    "accent": "#268bd2",
+    "accentHover": "#1d6da8",
+    "textOnAccent": "#fdf6e3",
+    "warning": "#b58900",
+    "danger": "#dc322f",
+    "dangerHover": "#c02b28",
+    "textOnDanger": "#fdf6e3"
+  },
+  "syntax": {
+    "foreground": "#586e75",
+    "comment": "#93a1a1",
+    "punctuation": "#657b83",
+    "number": "#d33682",
+    "string": "#2aa198",
+    "operator": "#6c71c4",
+    "keyword": "#859900",
+    "function": "#268bd2",
+    "variable": "#b58900",
+    "type": "#268bd2"
+  }
+}

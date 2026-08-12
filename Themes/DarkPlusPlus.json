@@ -1,0 +1,36 @@
+{
+  "name": "Dark++",
+  "author": "Windows Terminal community",
+  "isDark": true,
+  "chrome": {
+    "background": "#111111",
+    "surface": "#191919",
+    "surfaceAlt": "#2a2a2a",
+    "surfaceHover": "#3a3a3a",
+    "surfacePressed": "#4a4a4a",
+    "border": "#333333",
+    "inputBackground": "#0d0d0d",
+    "textPrimary": "#ffffff",
+    "textSecondary": "#bbbbbb",
+    "textFaint": "#666666",
+    "accent": "#5f87ff",
+    "accentHover": "#7fa3ff",
+    "textOnAccent": "#000000",
+    "warning": "#ffff55",
+    "danger": "#ff5555",
+    "dangerHover": "#ff7777",
+    "textOnDanger": "#000000"
+  },
+  "syntax": {
+    "foreground": "#ffffff",
+    "comment": "#666666",
+    "punctuation": "#ffffff",
+    "number": "#ffff55",
+    "string": "#55ff55",
+    "operator": "#5f87ff",
+    "keyword": "#55ffff",
+    "function": "#ff55ff",
+    "variable": "#ffaa55",
+    "type": "#87afff"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "CGA",
+  "author": "Retro / Windows Terminal",
+  "isDark": true,
+  "chrome": {
+    "background": "#000000",
+    "surface": "#1a1a1a",
+    "surfaceAlt": "#2a2a2a",
+    "surfaceHover": "#3a3a3a",
+    "surfacePressed": "#4a4a4a",
+    "border": "#333333",
+    "inputBackground": "#0a0a0a",
+    "textPrimary": "#aaaaaa",
+    "textSecondary": "#777777",
+    "textFaint": "#555555",
+    "accent": "#55ffff",
+    "accentHover": "#88ffff",
+    "textOnAccent": "#000000",
+    "warning": "#ffff55",
+    "danger": "#ff5555",
+    "dangerHover": "#ff7777",
+    "textOnDanger": "#000000"
+  },
+  "syntax": {
+    "foreground": "#aaaaaa",
+    "comment": "#555555",
+    "punctuation": "#aaaaaa",
+    "number": "#ffff55",
+    "string": "#55ff55",
+    "operator": "#00aaaa",
+    "keyword": "#55ffff",
+    "function": "#ff55ff",
+    "variable": "#ff5555",
+    "type": "#5555ff"
+  }
+}

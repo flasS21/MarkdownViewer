@@ -1,0 +1,36 @@
+{
+  "name": "Gruvbox Dark",
+  "author": "morhetz (vim)",
+  "isDark": true,
+  "chrome": {
+    "background": "#282828",
+    "surface": "#1d2021",
+    "surfaceAlt": "#3c3836",
+    "surfaceHover": "#504945",
+    "surfacePressed": "#665c54",
+    "border": "#3c3836",
+    "inputBackground": "#1d2021",
+    "textPrimary": "#ebdbb2",
+    "textSecondary": "#bdae93",
+    "textFaint": "#928374",
+    "accent": "#d79921",
+    "accentHover": "#fabd2f",
+    "textOnAccent": "#282828",
+    "warning": "#fabd2f",
+    "danger": "#fb4934",
+    "dangerHover": "#ff6a5e",
+    "textOnDanger": "#282828"
+  },
+  "syntax": {
+    "foreground": "#ebdbb2",
+    "comment": "#928374",
+    "punctuation": "#a89984",
+    "number": "#d3869b",
+    "string": "#b8bb26",
+    "operator": "#fe8019",
+    "keyword": "#fb4934",
+    "function": "#8ec07c",
+    "variable": "#ebdbb2",
+    "type": "#83a598"
+  }
+}

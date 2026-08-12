@@ -1,0 +1,36 @@
+{
+  "name": "Catppuccin Latte",
+  "author": "Catppuccin",
+  "isDark": false,
+  "chrome": {
+    "background": "#eff1f5",
+    "surface": "#e6e9ef",
+    "surfaceAlt": "#ccd0da",
+    "surfaceHover": "#bcc0cc",
+    "surfacePressed": "#acb0be",
+    "border": "#ccd0da",
+    "inputBackground": "#dce0e8",
+    "textPrimary": "#4c4f69",
+    "textSecondary": "#5c5f77",
+    "textFaint": "#8c8fa1",
+    "accent": "#1e66f5",
+    "accentHover": "#175ad8",
+    "textOnAccent": "#ffffff",
+    "warning": "#d20f39",
+    "danger": "#d20f39",
+    "dangerHover": "#b01230",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#4c4f69",
+    "comment": "#9ca0b0",
+    "punctuation": "#5c5f77",
+    "number": "#fe640b",
+    "string": "#40a02b",
+    "operator": "#04a5e5",
+    "keyword": "#8839ef",
+    "function": "#1e66f5",
+    "variable": "#df8e1d",
+    "type": "#df8e1d"
+  }
+}

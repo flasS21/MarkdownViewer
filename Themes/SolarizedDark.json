@@ -1,0 +1,36 @@
+{
+  "name": "Solarized Dark",
+  "author": "Ethan Schoonover / Windows Terminal",
+  "isDark": true,
+  "chrome": {
+    "background": "#002b36",
+    "surface": "#073642",
+    "surfaceAlt": "#0a4a56",
+    "surfaceHover": "#11586a",
+    "surfacePressed": "#186c80",
+    "border": "#073642",
+    "inputBackground": "#001e26",
+    "textPrimary": "#93a1a1",
+    "textSecondary": "#839496",
+    "textFaint": "#586e75",
+    "accent": "#268bd2",
+    "accentHover": "#4aa3de",
+    "textOnAccent": "#002b36",
+    "warning": "#b58900",
+    "danger": "#dc322f",
+    "dangerHover": "#e85d5a",
+    "textOnDanger": "#fdf6e3"
+  },
+  "syntax": {
+    "foreground": "#839496",
+    "comment": "#586e75",
+    "punctuation": "#93a1a1",
+    "number": "#d33682",
+    "string": "#2aa198",
+    "operator": "#6c71c4",
+    "keyword": "#859900",
+    "function": "#268bd2",
+    "variable": "#b58900",
+    "type": "#268bd2"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "IBM 5153",
+  "author": "Retro / Windows Terminal",
+  "isDark": true,
+  "chrome": {
+    "background": "#000000",
+    "surface": "#1c1018",
+    "surfaceAlt": "#2e1a24",
+    "surfaceHover": "#402434",
+    "surfacePressed": "#523044",
+    "border": "#352030",
+    "inputBackground": "#0a060a",
+    "textPrimary": "#b8a0a0",
+    "textSecondary": "#8a6a6a",
+    "textFaint": "#5a4a50",
+    "accent": "#ff55ff",
+    "accentHover": "#ff88ff",
+    "textOnAccent": "#000000",
+    "warning": "#ffaa55",
+    "danger": "#ff5555",
+    "dangerHover": "#ff7777",
+    "textOnDanger": "#000000"
+  },
+  "syntax": {
+    "foreground": "#b8a0a0",
+    "comment": "#5a4a50",
+    "punctuation": "#b8a0a0",
+    "number": "#ffaa55",
+    "string": "#55ff55",
+    "operator": "#55ffff",
+    "keyword": "#ff55ff",
+    "function": "#ffff55",
+    "variable": "#ff5555",
+    "type": "#5555ff"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "One Half Light",
+  "author": "Son A. Pham / Windows Terminal",
+  "isDark": false,
+  "chrome": {
+    "background": "#fafafa",
+    "surface": "#efefef",
+    "surfaceAlt": "#e0e0e0",
+    "surfaceHover": "#d0d0d0",
+    "surfacePressed": "#bfbfbf",
+    "border": "#e0e0e0",
+    "inputBackground": "#f2f2f2",
+    "textPrimary": "#383a42",
+    "textSecondary": "#4f525e",
+    "textFaint": "#a0a1a7",
+    "accent": "#4078f2",
+    "accentHover": "#2d5fc9",
+    "textOnAccent": "#ffffff",
+    "warning": "#c18401",
+    "danger": "#e45649",
+    "dangerHover": "#c73e33",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#383a42",
+    "comment": "#a0a1a7",
+    "punctuation": "#383a42",
+    "number": "#986801",
+    "string": "#50a14f",
+    "operator": "#0184bc",
+    "keyword": "#a626a4",
+    "function": "#4078f2",
+    "variable": "#e45649",
+    "type": "#c18401"
+  }
+}

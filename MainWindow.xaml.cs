@@ -83,8 +83,19 @@ namespace MarkdownViewer
                 }
                 _webViewEnvReady = true;
 
-                // Apply initial theme
-                ApplyTheme();
+                // Load available themes and apply the saved (or default) one
+                ThemeService.Instance.Initialize();
+                foreach (var theme in ThemeService.Instance.Themes)
+                {
+                    ThemeDropdown.Items.Add(theme);
+                }
+
+                string savedTheme = _settingsManager.Current.ThemeName;
+                string initialTheme = ThemeService.Instance.GetTheme(savedTheme) != null
+                    ? savedTheme
+                    : (ThemeService.Instance.Themes.Count > 0 ? ThemeService.Instance.Themes[0].Name : "Catppuccin Mocha");
+                ApplyTheme(initialTheme);
+                SyncThemeDropdown();
                 ApplyAppFont();
 
                 // Apply window title bar theme
@@ -192,10 +203,10 @@ namespace MarkdownViewer
                 CloseCurrentTab();
                 e.Handled = true;
             }
-            // Ctrl+T = toggle theme
+            // Ctrl+T = open theme dropdown
             else if (e.Key == Key.T && Keyboard.Modifiers == ModifierKeys.Control)
             {
-                ThemeToggleButton_Click(this, new RoutedEventArgs());
+                ThemeDropdown.IsDropDownOpen = true;
                 e.Handled = true;
             }
             // Ctrl+, = settings
@@ -341,18 +352,26 @@ namespace MarkdownViewer
             CloseCurrentTab();
         }
 
-        private void ThemeToggleButton_Click(object sender, RoutedEventArgs e)
+        private void ThemeDropdown_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            var settings = _settingsManager.Current;
-            settings.FollowSystemTheme = false;
-            settings.IsDarkMode = !settings.IsDarkMode;
-            _settingsManager.Save();
+            if (ThemeDropdown.SelectedItem is Models.ThemeDefinition theme &&
+                theme.Name != ThemeService.Instance.CurrentTheme.Name)
+            {
+                ApplyTheme(theme.Name);
+            }
+        }
 
-            ApplyTheme();
-            RefreshAllTabs();
-
-            var hwnd = new WindowInteropHelper(this).Handle;
-            ThemeManager.UpdateWindowTheme(hwnd, settings.IsDarkMode);
+        private void SyncThemeDropdown()
+        {
+            string current = ThemeService.Instance.CurrentTheme.Name;
+            foreach (var item in ThemeDropdown.Items)
+            {
+                if (item is Models.ThemeDefinition t && t.Name == current)
+                {
+                    ThemeDropdown.SelectedItem = item;
+                    break;
+                }
+            }
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
@@ -373,16 +392,10 @@ namespace MarkdownViewer
                         _settingsManager.Current.BodyFontSize = newSettings.BodyFontSize;
                         _settingsManager.Current.CodeFontFamily = newSettings.CodeFontFamily;
                         _settingsManager.Current.CodeFontSize = newSettings.CodeFontSize;
-                        _settingsManager.Current.IsDarkMode = newSettings.IsDarkMode;
-                        _settingsManager.Current.FollowSystemTheme = newSettings.FollowSystemTheme;
                         _settingsManager.Save();
 
-                        ApplyTheme();
                         ApplyAppFont();
                         RefreshAllTabs();
-
-                        var hwnd = new WindowInteropHelper(this).Handle;
-                        ThemeManager.UpdateWindowTheme(hwnd, newSettings.IsDarkMode);
                     }
                     catch (Exception ex)
                     {
@@ -600,18 +613,16 @@ namespace MarkdownViewer
             }
         }
 
-        private void ApplyTheme()
+        private void ApplyTheme(string themeName)
         {
+            if (!ThemeService.Instance.ApplyTheme(themeName))
+                return;
+
             var settings = _settingsManager.Current;
-            bool isDark = settings.IsDarkMode;
+            var hwnd = new WindowInteropHelper(this).Handle;
+            ThemeManager.UpdateWindowTheme(hwnd, settings.IsDarkMode);
 
-            // Show moon icon in dark mode (switch-to-light affordance), sun in light mode
-            MoonPath.Visibility = isDark ? Visibility.Visible : Visibility.Collapsed;
-            SunPath.Visibility = isDark ? Visibility.Collapsed : Visibility.Visible;
-
-            var dict = Application.Current.Resources.MergedDictionaries[0];
-            string themeFile = isDark ? "Themes/DarkTheme.xaml" : "Themes/LightTheme.xaml";
-            dict.Source = new Uri(themeFile, UriKind.Relative);
+            RefreshAllTabs();
         }
 
         /// <summary>

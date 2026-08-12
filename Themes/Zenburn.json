@@ -1,0 +1,36 @@
+{
+  "name": "Zenburn",
+  "author": "Janne Junnila (vim)",
+  "isDark": true,
+  "chrome": {
+    "background": "#3f3f3f",
+    "surface": "#383838",
+    "surfaceAlt": "#4a4a4a",
+    "surfaceHover": "#565656",
+    "surfacePressed": "#626262",
+    "border": "#4a4a4a",
+    "inputBackground": "#2b2b2b",
+    "textPrimary": "#dcdccc",
+    "textSecondary": "#b8b8a8",
+    "textFaint": "#7f9f7f",
+    "accent": "#d0bf8f",
+    "accentHover": "#e0cf9f",
+    "textOnAccent": "#1f1f1f",
+    "warning": "#f0dfaf",
+    "danger": "#cc9393",
+    "dangerHover": "#dcb0b0",
+    "textOnDanger": "#1f1f1f"
+  },
+  "syntax": {
+    "foreground": "#dcdccc",
+    "comment": "#7f9f7f",
+    "punctuation": "#dcdccc",
+    "number": "#8cd0d3",
+    "string": "#cc9393",
+    "operator": "#dcdccc",
+    "keyword": "#f0dfaf",
+    "function": "#dfdfe0",
+    "variable": "#dcdccc",
+    "type": "#dfdfe0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "VSCode Dimmed",
+  "author": "Microsoft / VSCode",
+  "isDark": true,
+  "chrome": {
+    "background": "#1f2430",
+    "surface": "#242a36",
+    "surfaceAlt": "#313846",
+    "surfaceHover": "#3a4354",
+    "surfacePressed": "#444e62",
+    "border": "#2c3340",
+    "inputBackground": "#171c26",
+    "textPrimary": "#b8c2cc",
+    "textSecondary": "#8d9aa8",
+    "textFaint": "#5f6b7a",
+    "accent": "#569cd6",
+    "accentHover": "#75b1e0",
+    "textOnAccent": "#1f2430",
+    "warning": "#e6db74",
+    "danger": "#f44747",
+    "dangerHover": "#ff6b6b",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#b8c2cc",
+    "comment": "#5c6773",
+    "punctuation": "#b8c2cc",
+    "number": "#b5cea8",
+    "string": "#d69d85",
+    "operator": "#b8c2cc",
+    "keyword": "#569cd6",
+    "function": "#dcdcaa",
+    "variable": "#9cdcfe",
+    "type": "#4ec9b0"
+  }
+}

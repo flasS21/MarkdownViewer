@@ -1,0 +1,36 @@
+{
+  "name": "VSCode Dark+",
+  "author": "Microsoft / VSCode",
+  "isDark": true,
+  "chrome": {
+    "background": "#1e1e1e",
+    "surface": "#252526",
+    "surfaceAlt": "#333333",
+    "surfaceHover": "#3a3d41",
+    "surfacePressed": "#45494e",
+    "border": "#3c3c3c",
+    "inputBackground": "#3c3c3c",
+    "textPrimary": "#d4d4d4",
+    "textSecondary": "#9d9d9d",
+    "textFaint": "#6a6a6a",
+    "accent": "#0e639c",
+    "accentHover": "#1177bb",
+    "textOnAccent": "#ffffff",
+    "warning": "#cca700",
+    "danger": "#f14c4c",
+    "dangerHover": "#f48771",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#d4d4d4",
+    "comment": "#6a9955",
+    "punctuation": "#d4d4d4",
+    "number": "#b5cea8",
+    "string": "#ce9178",
+    "operator": "#d4d4d4",
+    "keyword": "#569cd6",
+    "function": "#dcdcaa",
+    "variable": "#9cdcfe",
+    "type": "#4ec9b0"
+  }
+}

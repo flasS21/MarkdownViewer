@@ -1,0 +1,36 @@
+{
+  "name": "VSCode Light+",
+  "author": "Microsoft / VSCode",
+  "isDark": false,
+  "chrome": {
+    "background": "#ffffff",
+    "surface": "#f3f3f3",
+    "surfaceAlt": "#e7e7e7",
+    "surfaceHover": "#dcdcdc",
+    "surfacePressed": "#d0d0d0",
+    "border": "#c8c8c8",
+    "inputBackground": "#ffffff",
+    "textPrimary": "#1f1f1f",
+    "textSecondary": "#434343",
+    "textFaint": "#717171",
+    "accent": "#005fcc",
+    "accentHover": "#007acc",
+    "textOnAccent": "#ffffff",
+    "warning": "#b89500",
+    "danger": "#cd3131",
+    "dangerHover": "#e51400",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#1f1f1f",
+    "comment": "#008000",
+    "punctuation": "#1f1f1f",
+    "number": "#098658",
+    "string": "#a31515",
+    "operator": "#1f1f1f",
+    "keyword": "#0000ff",
+    "function": "#795e26",
+    "variable": "#001080",
+    "type": "#267f99"
+  }
+}

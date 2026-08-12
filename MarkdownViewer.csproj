@@ -31,4 +31,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <!-- Copy theme palettes next to the executable so they load at runtime -->
+  <ItemGroup>
+    <Content Include="Themes\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

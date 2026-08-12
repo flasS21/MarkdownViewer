@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Controls.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- ============================================================
+         THEME SHELL — default brush definitions
+         All control templates reference these keys via DynamicResource;
+         ThemeService overwrites the brush VALUES at runtime when a theme
+         is selected. The values below (Catppuccin Mocha) are the fallback
+         used until the first theme JSON is applied.
+         ============================================================ -->
+
+    <!-- Surfaces -->
+    <SolidColorBrush x:Key="Brush.Background"   Color="#1e1e2e" />
+    <SolidColorBrush x:Key="Brush.Surface"      Color="#181825" />
+    <SolidColorBrush x:Key="Brush.SurfaceAlt"   Color="#313244" />
+    <SolidColorBrush x:Key="Brush.SurfaceHover" Color="#45475a" />
+    <SolidColorBrush x:Key="Brush.SurfacePressed" Color="#585b70" />
+    <SolidColorBrush x:Key="Brush.Border"       Color="#313244" />
+    <SolidColorBrush x:Key="Brush.InputBackground" Color="#11111b" />
+
+    <!-- Text -->
+    <SolidColorBrush x:Key="Brush.TextPrimary"   Color="#cdd6f4" />
+    <SolidColorBrush x:Key="Brush.TextSecondary" Color="#a6adc8" />
+    <SolidColorBrush x:Key="Brush.TextFaint"     Color="#6c7086" />
+
+    <!-- Accent -->
+    <SolidColorBrush x:Key="Brush.Accent"      Color="#89b4fa" />
+    <SolidColorBrush x:Key="Brush.AccentHover" Color="#a5c4fc" />
+    <SolidColorBrush x:Key="Brush.TextOnAccent" Color="#1e1e2e" />
+
+    <!-- Semantic -->
+    <SolidColorBrush x:Key="Brush.Warning"     Color="#f9e2af" />
+    <SolidColorBrush x:Key="Brush.Danger"      Color="#f38ba8" />
+    <SolidColorBrush x:Key="Brush.DangerHover" Color="#e26d91" />
+    <SolidColorBrush x:Key="Brush.TextOnDanger" Color="#1e1e2e" />
+
+    <!-- Shared effects -->
+    <DropShadowEffect x:Key="DropShadowEffect"
+                      BlurRadius="12"
+                      ShadowDepth="2"
+                      Opacity="0.45"
+                      Color="#000000" />
+
+</ResourceDictionary>

@@ -1,0 +1,36 @@
+{
+  "name": "Nord",
+  "author": "arcticicestudio (vim)",
+  "isDark": true,
+  "chrome": {
+    "background": "#2e3440",
+    "surface": "#272c36",
+    "surfaceAlt": "#3b4252",
+    "surfaceHover": "#434c5e",
+    "surfacePressed": "#4c566a",
+    "border": "#3b4252",
+    "inputBackground": "#232833",
+    "textPrimary": "#eceff4",
+    "textSecondary": "#d8dee9",
+    "textFaint": "#81a1c1",
+    "accent": "#88c0d0",
+    "accentHover": "#9bd1dd",
+    "textOnAccent": "#2e3440",
+    "warning": "#ebcb8b",
+    "danger": "#bf616a",
+    "dangerHover": "#d17a82",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#eceff4",
+    "comment": "#616e88",
+    "punctuation": "#d8dee9",
+    "number": "#b48ead",
+    "string": "#a3be8c",
+    "operator": "#81a1c1",
+    "keyword": "#81a1c1",
+    "function": "#88c0d0",
+    "variable": "#d8dee9",
+    "type": "#8fbcbb"
+  }
+}

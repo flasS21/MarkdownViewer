@@ -1,0 +1,36 @@
+{
+  "name": "Notepad++",
+  "author": "Notepad++",
+  "isDark": false,
+  "chrome": {
+    "background": "#ffffff",
+    "surface": "#f0f0f0",
+    "surfaceAlt": "#e0e0e0",
+    "surfaceHover": "#d0d0d0",
+    "surfacePressed": "#c0c0c0",
+    "border": "#d0d0d0",
+    "inputBackground": "#ffffff",
+    "textPrimary": "#000000",
+    "textSecondary": "#444444",
+    "textFaint": "#888888",
+    "accent": "#0066cc",
+    "accentHover": "#005299",
+    "textOnAccent": "#ffffff",
+    "warning": "#b58900",
+    "danger": "#cc0000",
+    "dangerHover": "#a30000",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#000000",
+    "comment": "#008000",
+    "punctuation": "#000000",
+    "number": "#ff8000",
+    "string": "#808080",
+    "operator": "#000000",
+    "keyword": "#0000ff",
+    "function": "#8000ff",
+    "variable": "#000000",
+    "type": "#008080"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Tango Light",
+  "author": "Tango Desktop Project / Windows Terminal",
+  "isDark": false,
+  "chrome": {
+    "background": "#ffffff",
+    "surface": "#f4f4f3",
+    "surfaceAlt": "#e2e3e1",
+    "surfaceHover": "#d2d3d1",
+    "surfacePressed": "#c2c3c0",
+    "border": "#d7d8d5",
+    "inputBackground": "#f0f0ee",
+    "textPrimary": "#2e3436",
+    "textSecondary": "#555753",
+    "textFaint": "#888a85",
+    "accent": "#3465a4",
+    "accentHover": "#2a5280",
+    "textOnAccent": "#ffffff",
+    "warning": "#8f5902",
+    "danger": "#cc0000",
+    "dangerHover": "#a40000",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#2e3436",
+    "comment": "#888a85",
+    "punctuation": "#2e3436",
+    "number": "#8f5902",
+    "string": "#4e9a06",
+    "operator": "#06989a",
+    "keyword": "#204a87",
+    "function": "#5c3566",
+    "variable": "#cc0000",
+    "type": "#c4a000"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Monokai Pro",
+  "author": "Monokai Pro",
+  "isDark": true,
+  "chrome": {
+    "background": "#2d2a2e",
+    "surface": "#262326",
+    "surfaceAlt": "#373438",
+    "surfaceHover": "#454145",
+    "surfacePressed": "#534e53",
+    "border": "#373438",
+    "inputBackground": "#1e1c1f",
+    "textPrimary": "#fcfcfa",
+    "textSecondary": "#b8b8b0",
+    "textFaint": "#727072",
+    "accent": "#ffd866",
+    "accentHover": "#ffe08a",
+    "textOnAccent": "#2d2a2e",
+    "warning": "#ffd866",
+    "danger": "#ff6188",
+    "dangerHover": "#ff82a1",
+    "textOnDanger": "#2d2a2e"
+  },
+  "syntax": {
+    "foreground": "#fcfcfa",
+    "comment": "#727072",
+    "punctuation": "#fcfcfa",
+    "number": "#ab9df2",
+    "string": "#ffd866",
+    "operator": "#fcfcfa",
+    "keyword": "#ff6188",
+    "function": "#78dce8",
+    "variable": "#ffd866",
+    "type": "#78dce8"
+  }
+}

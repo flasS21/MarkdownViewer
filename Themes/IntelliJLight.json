@@ -1,0 +1,36 @@
+{
+  "name": "IntelliJ Light",
+  "author": "JetBrains",
+  "isDark": false,
+  "chrome": {
+    "background": "#ffffff",
+    "surface": "#f5f5f5",
+    "surfaceAlt": "#e8e8e8",
+    "surfaceHover": "#dcdcdc",
+    "surfacePressed": "#d0d0d0",
+    "border": "#d0d0d0",
+    "inputBackground": "#ffffff",
+    "textPrimary": "#000000",
+    "textSecondary": "#4b4b4b",
+    "textFaint": "#808080",
+    "accent": "#0675c1",
+    "accentHover": "#055c99",
+    "textOnAccent": "#ffffff",
+    "warning": "#b58500",
+    "danger": "#cd2028",
+    "dangerHover": "#a71a20",
+    "textOnDanger": "#ffffff"
+  },
+  "syntax": {
+    "foreground": "#000000",
+    "comment": "#8c8c8c",
+    "punctuation": "#000000",
+    "number": "#1750eb",
+    "string": "#067d17",
+    "operator": "#000000",
+    "keyword": "#0033b3",
+    "function": "#00627a",
+    "variable": "#038d63",
+    "type": "#871094"
+  }
+}
