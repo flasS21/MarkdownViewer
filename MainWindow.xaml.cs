@@ -347,9 +347,13 @@ namespace MarkdownViewer
             }
         }
 
-        private void CloseTabButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Header Close button — closes the application window. Closing
+        /// individual tabs is done via the ✕ on each tab or Ctrl+W.
+        /// </summary>
+        private void CloseAppButton_Click(object sender, RoutedEventArgs e)
         {
-            CloseCurrentTab();
+            Close();
         }
 
         private void ThemeDropdown_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
